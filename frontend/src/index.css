@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens (Space Mission Control) ─── */
+:root {
+ --bg-primary: #0B0F14;
+ --bg-panel: #111821;
+ --bg-card: #0F1720;
+ --bg-panel-hover: #1A2030;
+ --border-subtle: #1F2A36;
+ --text-primary: #E6EDF3;
+ --text-secondary: #9BA7B4;
+ --text-accent: #3BAFDA;
+ --color-blue: #4C82F7;
+ --color-cyan: #3BAFDA;
+ --color-danger: #F85149;
+ --color-warning: #D29922;
+ --color-nominal: #3FB950;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+html, body, #root {
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+ background: var(--bg-primary);
+ color: var(--text-primary);
+ font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+ -webkit-font-smoothing: antialiased;
+}
+
+/* Typography override: Ensure standard font for all headers */
+h1, h2, h3, h4, h5, h6 {
+ font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+ color: var(--text-primary);
+ font-weight: 600;
+}
+
+/* ─── Scrollbar (Minimal) ─── */
+::-webkit-scrollbar {
+ width: 6px;
+}
+::-webkit-scrollbar-track {
+ background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+ background: #1F2A36;
+ border-radius: 0px;
+}
+
+.glass-card {
+ background: var(--bg-panel);
+ border: 1px solid var(--border-subtle);
+ border-radius: 4px;
+ box-shadow: none;
+}
+
+.glass-card.danger {
+ border-left: 3px solid var(--color-danger);
+}
+
+.glass-card.warning {
+ border-left: 3px solid var(--color-warning);
+}
+
+/* ─── UI Badges ─── */
+.badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 4px;
+ padding: 2px 8px;
+ border-radius: 2px;
+ font-size: 0.70rem;
+ font-weight: 500;
+ text-transform: uppercase;
+ letter-spacing: 0.05em;
+}
+.badge.critical {
+ background: #1F1518;
+ color: var(--color-danger);
+ border: 1px solid #3D2020;
+}
+.badge.warning {
+ background: #1F1D14;
+ color: var(--color-warning);
+ border: 1px solid #3D3018;
+}
+.badge.nominal {
+ background: #121F1B;
+ color: var(--color-nominal);
+ border: 1px solid #1A3028;
+}
+
+/* ─── Simulate Button (Flat Form) ─── */
+.btn-simulate {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ padding: 14px 16px;
+ background: #4C82F7;
+ color: #E6EDF3;
+ border: none;
+ border-radius: 3px;
+ font-size: 0.9rem;
+ font-weight: 600;
+ cursor: pointer;
+ transition: background 0.15s ease;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ box-shadow: none;
+}
+.btn-simulate:hover:not(:disabled) {
+ background: #3A6FE0;
+}
+.btn-simulate:active:not(:disabled) {
+ background: #3060C8;
+}
+.btn-simulate:disabled {
+ background: #1F2A36;
+ color: #9BA7B4;
+ border: none;
+ cursor: not-allowed;
+}
+
+/* Ensure no animations run wild */
+.blink-text {
+ /* Removed blinking as requested for non-critical elements, but leaving class empty */
+}
